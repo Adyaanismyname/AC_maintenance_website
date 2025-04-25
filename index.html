@@ -104,11 +104,15 @@
 			transition: all 0.2s;
 		}
 
-		.copy-btn:hover {
-			/* color: #0077b6; */
-			background-color: #05ACEF;
-			transform: scale(1.1);
+		@media (hover:hover) and (pointer:fine) {
+			.copy-btn:hover {
+				/* color: #0077b6; */
+				background-color: #05ACEF;
+				transform: scale(1.1);
+
+			}
 		}
+
 
 		.card-footer {
 			margin-top: 25px;
