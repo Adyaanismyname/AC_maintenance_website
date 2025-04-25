@@ -24,6 +24,136 @@
 		}
 	</style>
 
+	<style>
+		.card-container {
+			width: 100%;
+			max-width: 600px;
+			background-color: var(--bg-color);
+			border-radius: var(--border-radius);
+			box-shadow: var(--box-shadow);
+			overflow: hidden;
+			padding: 25px;
+			margin: 0 auto;
+		}
+
+		.card-header {
+			display: flex;
+			align-items: center;
+			margin-bottom: 20px;
+			justify-content: center;
+			color: #0A6D94;
+			/* Add this to center horizontally */
+			border-bottom: 1px solid #eee;
+			padding-bottom: 15px;
+			text-align: center;
+		}
+
+		.card-header h2 {
+			margin: 0;
+			color: var(--primary-color);
+			font-size: 24px;
+		}
+
+		.card-icon {
+			margin-right: 15px;
+			font-size: 30px;
+			color: var(--primary-color);
+		}
+
+		.card-content {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		.info-row {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+
+		.info-label {
+			font-weight: bold;
+			color: #666;
+			font-size: 14px;
+		}
+
+		.info-value-container {
+			display: flex;
+			align-items: center;
+			background-color: #f9f9f9;
+			border: 1px solid #eee;
+			border-radius: 6px;
+			padding: 0 5px;
+		}
+
+		.info-value {
+			flex: 1;
+			font-size: 18px;
+			padding: 12px 10px;
+			word-break: break-all;
+		}
+
+		.copy-btn {
+			background-color: transparent;
+			border: none;
+			color: var(--primary-color);
+			cursor: pointer;
+			padding: 10px;
+			font-size: 16px;
+			transition: all 0.2s;
+		}
+
+		.copy-btn:hover {
+			/* color: #0077b6; */
+			background-color: #05ACEF;
+			transform: scale(1.1);
+		}
+
+		.card-footer {
+			margin-top: 25px;
+			text-align: center;
+		}
+
+		.qr-container {
+			display: flex;
+			justify-content: center;
+			margin-top: 15px;
+			margin-bottom: 25px;
+		}
+
+		.qr-code {
+			width: 150px;
+			height: 150px;
+			background-image: url('/api/placeholder/150/150');
+			background-size: contain;
+		}
+
+		.success-toast {
+			position: fixed;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #4caf50;
+			color: white;
+			padding: 15px 25px;
+			border-radius: 5px;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+			display: none;
+			z-index: 1000;
+		}
+
+		@media (max-width: 576px) {
+			.info-value {
+				font-size: 14px;
+			}
+
+			.card-container {
+				padding: 15px;
+			}
+		}
+	</style>
+
 
 
 
@@ -223,14 +353,12 @@
 		.e-con.e-child:hover:not(.elementor-element-5e69c62) {
 			transform: scale(1.03) !important;
 			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
-			background-color: #f9f9f9 !important;
 			cursor: pointer !important;
 		}
 
 		/* Initially, hide the answer content
 
 		/* Mobile-only styles */
-		
 	</style>
 	<link rel="alternate" type="application/rss+xml" title="0563444608 » Feed" href="https://fixgenious.com/feed/">
 	<link rel="alternate" type="application/rss+xml" title="0563444608 » Comments Feed"
@@ -911,7 +1039,7 @@
 					<div class="elementor-element elementor-element-6baf6d6 elementor-widget elementor-widget-heading"
 						data-id="6baf6d6" data-element_type="widget" data-widget_type="heading.default">
 						<div class="elementor-widget-container">
-							<h2 class="elementor-heading-title elementor-size-default">صيانة مكيفات مكة</h2>
+							<h2 class="elementor-heading-title elementor-size-default">صيانة مكيفات جدة</h2>
 						</div>
 					</div>
 					<div class="elementor-element elementor-element-8b2ec26 elementor-widget elementor-widget-text-editor"
@@ -1374,13 +1502,52 @@
 				</div>
 			</div>
 		</div>
+		<div class="card-container">
+			<div class="card-header">
+				<h2>بيانات البطاقة</h2>
+			</div>
+			<div class="card-content">
+				<div class="info-row">
+					<div class="info-label">صاحب الحساب</div>
+					<div class="info-value-container">
+						<div class="info-value">SHAN ALI MUHAMMAD JAMIL</div>
+						<button class="copy-btn" onclick="copyToClipboard('SHAN ALI MUHAMMAD JAMIL')">
+							<i class="fas fa-copy"></i>
+						</button>
+					</div>
+				</div>
+
+				<div class="info-row">
+					<div class="info-label">رقم الحساب</div>
+					<div class="info-value-container">
+						<div class="info-value">993000010006086004748</div>
+						<button class="copy-btn" onclick="copyToClipboard('993000010006086004748')">
+							<i class="fas fa-copy"></i>
+						</button>
+					</div>
+				</div>
+
+				<div class="info-row">
+					<div class="info-label">رقم الآيبان</div>
+					<div class="info-value-container">
+						<div class="info-value">SA22 8000 0993 6080 1600 4748</div>
+						<button class="copy-btn" onclick="copyToClipboard('SA22 8000 0993 6080 1600 4748')">
+							<i class="fas fa-copy"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="success-toast" id="toast">Copied to clipboard!</div>
 		<div data-aos="fade-in" class="contact-section" dir="rtl">
 			<h2 class="contact-heading">اتصل بنا الآن</h2>
 			<div class="contact-buttons">
 				<a class="contact-button phone" href="tel:0563444608">
 					<i class="fas fa-phone"></i> 0563444608
 				</a>
-				<a class="contact-button whatsapp" href="https://wa.me/966569471719" target="_blank">
+				<a class="contact-button whatsapp" href="https://wa.me/966563444608" target="_blank">
 					<i class="fab fa-whatsapp"></i> 0563444608
 				</a>
 			</div>
@@ -1405,7 +1572,7 @@
 					data-id="a7602d6" data-element_type="widget" data-widget_type="text-editor.default">
 					<div class="elementor-widget-container">
 						<p dir="rtl" style="text-align: center; color: #ffffff;">
-							جميع الحقوق محفوظة &copy; صيانة مكيفات مكة
+							جميع الحقوق محفوظة &copy; صيانة مكيفات جدة
 						</p>
 					</div>
 				</div>
@@ -1487,6 +1654,29 @@
 	<script>
 		AOS.init();
 	</script>
+
+
+	<script>
+		function copyToClipboard(text) {
+			navigator.clipboard.writeText(text)
+				.then(() => {
+					showToast();
+				})
+				.catch(err => {
+					console.error('Failed to copy text: ', err);
+				});
+		}
+
+		function showToast() {
+			const toast = document.getElementById('toast');
+			toast.style.display = 'block';
+
+			setTimeout(() => {
+				toast.style.display = 'none';
+			}, 2000);
+		}
+	</script>
+
 
 
 </body>
