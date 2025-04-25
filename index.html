@@ -104,12 +104,14 @@
 			transition: all 0.2s;
 		}
 
-		@media (hover:hover) and (pointer:fine) {
+		@media (min-width: 768px) {
 			.copy-btn:hover {
-				/* color: #0077b6; */
-				background-color: #05ACEF;
+				color: #05ACEF;
 				transform: scale(1.1);
+			}
 
+			.copy-btn:hover i {
+				color: #05ACEF;
 			}
 		}
 
